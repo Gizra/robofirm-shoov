@@ -41,7 +41,7 @@ var caps = selectedCaps ? capsConfig[selectedCaps] : undefined;
 var providerPrefix = process.env.PROVIDER_PREFIX ? process.env.PROVIDER_PREFIX + '-' : '';
 var testName = selectedCaps ? providerPrefix + selectedCaps : providerPrefix + 'default';
 
-var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://robofirm.com';
+var baseUrl = process.env.BASE_URL ? process.env.BASE_URL : 'http://robofirm.com/services';
 
 var resultsCallback = process.env.DEBUG ? console.log : shoovWebdrivercss.processResults;
 
@@ -65,19 +65,8 @@ describe('Visual monitor testing', function() {
         name: '1',
         exclude:
           [
-            // Top carousel.
-            '.slick-track',
-            // Mobile section.
-            '.iphone-hand img',
             // Service.
             '.service-image img'
-          ],
-        remove:['#content > div.featured-services > div > ul > li:nth-child(4) > div.service-text'],
-        hide:
-          [
-            // Mobile section.
-            '.iphone-text',
-            '#content > div.featured-services > div > ul > li:nth-child(4) > div.service-text'
           ],
         screenWidth: selectedCaps == 'chrome' ? [960] : undefined,
       }, resultsCallback)
