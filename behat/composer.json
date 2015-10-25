@@ -1,0 +1,10 @@
+{
+  "name": "Behat tests for http://robofirm.com",
+  "description": "Functional testing for http://robofirm.com site.",
+  "require": {
+    "drupal/drupal-extension": "~3.0"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
